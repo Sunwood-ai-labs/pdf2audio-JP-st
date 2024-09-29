@@ -48,16 +48,16 @@
 3. 必要に応じて指示をカスタマイズ
 4. 「音声を生成」をクリックして音声コンテンツを作成
 
-## 🎧 例
+
+> [!WARNING]
+> このアプリを使用するにはOpenAI APIキーが必要です。
+
+## 🎧 Example
 
 <audio controls>
   <source src="https://raw.githubusercontent.com/lamm-mit/PDF2Audio/main/SciAgents%20discovery%20summary%20-%20example.mp3" type="audio/mpeg">
-  お使いのブラウザは音声要素をサポートしていません。
+  ⚠️ お使いのブラウザは音声要素をサポートしていません。 ⚠️
 </audio>
-
-## ⚠️ 注意
-
-このアプリを使用するにはOpenAI APIキーが必要です。
 
 
 ## 🚀 デプロイメント手順
