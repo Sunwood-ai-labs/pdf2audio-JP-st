@@ -61,6 +61,59 @@
 
 このアプリを使用するにはOpenAI APIキーが必要です。
 
+
+
+## 🚀 デプロイメント手順
+
+このアプリケーションをAWS ECRとEC2を使用してデプロイする手順は以下の通りです：
+
+### 1. ECRリポジトリの作成
+
+まず、Amazon Elastic Container Registry (ECR) にリポジトリを作成します：
+
+```bash
+aws ecr create-repository --repository-name pdf2audio-jp-streamlit-app --region ap-northeast-1
+aws ecr describe-repositories --repository-names pdf2audio-jp-streamlit-app --region ap-northeast-1
+```
+
+これにより、新しいECRリポジトリが作成され、その詳細が表示されます。
+
+### 2. ECRへのログイン
+
+次に、ECRにログインします：
+
+```bash
+aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin XXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com
+```
+
+注意: `XXXXXX`の部分は、あなたのAWSアカウントIDに置き換えてください。
+
+### 3. Dockerイメージのビルドとプッシュ
+
+アプリケーションのDockerイメージをビルドし、ECRにプッシュします：
+
+```bash
+docker build -t pdf2audio-jp-streamlit-app .
+docker tag pdf2audio-jp-streamlit-app:latest XXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/pdf2audio-jp-streamlit-app:latest
+docker push XXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/pdf2audio-jp-streamlit-app:latest
+```
+
+これらのコマンドにより、ローカルでDockerイメージがビルドされ、ECRリポジトリにプッシュされます。
+
+### 4. EC2インスタンスへの接続
+
+アプリケーションをホストするEC2インスタンスに接続するには：
+
+```bash
+ssh -i "C:\Users\makim\.ssh\streamlit-terraform-keypair-tokyo-PEM2.pem" ubuntu@i-02c64da0e38c52135
+```
+
+注意: パスとインスタンスIDは、あなたの環境に合わせて適切に変更してください。
+
+これらの手順により、アプリケーションをAWSクラウド環境にデプロイすることができます。EC2インスタンス上でDockerコンテナを実行し、アプリケーションを起動してください。
+
+
+
 ## 🙏 Credits
 
 このプロジェクトは、[https://github.com/knowsuchagency/pdf-to-podcast](https://github.com/knowsuchagency/pdf-to-podcast)と[https://github.com/knowsuchagency/promptic](https://github.com/knowsuchagency/promptic)で公開されているコードを参考にし、それに基づいています。
@@ -88,24 +141,3 @@ GitHubリポジトリ: [lamm-mit/PDF2Audio](https://github.com/lamm-mit/PDF2Audi
 }
 ```
 
-
-```bash
-
-aws ecr create-repository --repository-name pdf2audio-jp-streamlit-app --region ap-northeast-1
-aws ecr describe-repositories --repository-names pdf2audio-jp-streamlit-app --region ap-northeast-1
-
-# cmd
-aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin XXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com
-
-docker build -t pdf2audio-jp-streamlit-app .
-docker tag pdf2audio-jp-streamlit-app:latest XXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/pdf2audio-jp-streamlit-app:latest
-docker push XXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/pdf2audio-jp-streamlit-app:latest
-
-```
-
-
-```bash
-
-ssh -i "C:\Users\makim\.ssh\streamlit-terraform-keypair-tokyo-PEM2.pem" ubuntu@i-02c64da0e38c52135
-
-```
