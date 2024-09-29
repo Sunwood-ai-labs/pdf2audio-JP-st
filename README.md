@@ -1,5 +1,3 @@
-
-<readme>
 <p align="center">
 <img src="https://huggingface.co/datasets/MakiAi/IconAssets/resolve/main/pdf2audio-JP-ST.png" width="50%">
 <br>
@@ -36,31 +34,30 @@
 このStreamlitアプリは、PDFを音声ポッドキャスト、講義、要約などに変換します。テキスト生成と音声合成にはOpenAIのGPTモデルを使用しています。
 
 
-## 🌟 Features
+## ✨ 主な機能
 
 - 複数のPDFファイルをアップロード可能
 - 異なる指示テンプレート（ポッドキャスト、講義、要約など）から選択可能
 - テキスト生成と音声モデルをカスタマイズ可能
 - 話者に異なる声を選択可能
 
-## 🔧 How to Use
+## 🔧 使用方法
 
 1. 1つまたは複数のPDFファイルをアップロード
 2. 希望する指示テンプレートを選択
 3. 必要に応じて指示をカスタマイズ
 4. 「音声を生成」をクリックして音声コンテンツを作成
 
-## 🎧 Example
+## 🎧 例
 
 <audio controls>
   <source src="https://raw.githubusercontent.com/lamm-mit/PDF2Audio/main/SciAgents%20discovery%20summary%20-%20example.mp3" type="audio/mpeg">
   お使いのブラウザは音声要素をサポートしていません。
 </audio>
 
-## ⚠️ Note
+## ⚠️ 注意
 
 このアプリを使用するにはOpenAI APIキーが必要です。
-
 
 
 ## 🚀 デプロイメント手順
@@ -114,30 +111,18 @@ ssh -i "C:\Users\makim\.ssh\streamlit-terraform-keypair-tokyo-PEM2.pem" ubuntu@i
 
 
 
-## 🙏 Credits
+## 🙏 謝辞
 
 このプロジェクトは、[https://github.com/knowsuchagency/pdf-to-podcast](https://github.com/knowsuchagency/pdf-to-podcast)と[https://github.com/knowsuchagency/promptic](https://github.com/knowsuchagency/promptic)で公開されているコードを参考にし、それに基づいています。
 
 GitHubリポジトリ: [lamm-mit/PDF2Audio](https://github.com/lamm-mit/PDF2Audio)
 
-## 📄 Citations
+## 📄 ライセンス
 
-```bibtex
-@article{ghafarollahi2024sciagentsautomatingscientificdiscovery,
-    title={SciAgents: マルチエージェント知的グラフ推論による科学的発見の自動化}, 
-    author={Alireza Ghafarollahi and Markus J. Buehler},
-    year={2024},
-    eprint={2409.05556},
-    archivePrefix={arXiv},
-    primaryClass={cs.AI},
-    url={https://arxiv.org/abs/2409.05556}, 
-}
-@article{buehler2024graphreasoning,
-    title={生成的知識抽出、グラフベース表現、マルチモーダル知的グラフ推論による科学的発見の加速},
-    author={Markus J. Buehler},
-    journal={Machine Learning: Science and Technology},
-    year={2024},
-    url={http://iopscience.iop.org/article/10.1088/2632-2153/ad7228},
-}
-```
+MIT License
 
+## 🆕 最新情報
+
+**バージョン: v0.1.0**
+
+このバージョンでは、PDFを音声に変換するStreamlitアプリケーションが導入されました。また、様々なワークフローとスクリプトが追加され、GitHubとの連携が強化されました。詳細については、[v0.1.0リリースノート](https://github.com/Sunwood-ai-labs/pdf2audio-JP-st/releases/tag/v0.1.0) を参照してください。
