@@ -1,0 +1,8 @@
+streamlit
+openai 
+loguru 
+promptic 
+pydantic 
+pypdf 
+tenacity 
+python-dotenv
