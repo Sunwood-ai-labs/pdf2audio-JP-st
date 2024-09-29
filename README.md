@@ -36,6 +36,8 @@
 このStreamlitアプリは、PDFを音声ポッドキャスト、講義、要約などに変換します。テキスト生成と音声合成にはOpenAIのGPTモデルを使用しています。
 
 
+https://github.com/user-attachments/assets/a94a33bf-8a01-4661-be25-21b0a83c43b8
+
 ## 🌟 Features
 
 - 複数のPDFファイルをアップロード可能
@@ -50,17 +52,16 @@
 3. 必要に応じて指示をカスタマイズ
 4. 「音声を生成」をクリックして音声コンテンツを作成
 
+
+> [!WARNING]
+> このアプリを使用するにはOpenAI APIキーが必要です。
+
 ## 🎧 Example
 
 <audio controls>
   <source src="https://raw.githubusercontent.com/lamm-mit/PDF2Audio/main/SciAgents%20discovery%20summary%20-%20example.mp3" type="audio/mpeg">
-  お使いのブラウザは音声要素をサポートしていません。
+  ⚠️ お使いのブラウザは音声要素をサポートしていません。 ⚠️
 </audio>
-
-## ⚠️ Note
-
-このアプリを使用するにはOpenAI APIキーが必要です。
-
 
 
 ## 🚀 デプロイメント手順
