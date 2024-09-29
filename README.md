@@ -1,3 +1,14 @@
+---
+title: Pdf2audio JP St
+emoji: 🏆
+colorFrom: red
+colorTo: gray
+sdk: streamlit
+sdk_version: 1.38.0
+app_file: app.py
+pinned: false
+---
+
 <p align="center">
 <img src="https://huggingface.co/datasets/MakiAi/IconAssets/resolve/main/pdf2audio-JP-ST.png" width="50%">
 <br>
@@ -57,8 +68,8 @@ https://github.com/user-attachments/assets/a94a33bf-8a01-4661-be25-21b0a83c43b8
 ## 🎧 Example
 
 <audio controls>
-  <source src="https://raw.githubusercontent.com/lamm-mit/PDF2Audio/main/SciAgents%20discovery%20summary%20-%20example.mp3" type="audio/mpeg">
-  ⚠️ お使いのブラウザは音声要素をサポートしていません。 ⚠️
+  <source src="https://github.com/Sunwood-ai-labs/pdf2audio-JP-st/raw/595e0375167c78d5014cfae3174cdba33cd544b6/docs/Paper-commentary-podcast_audio.mp3" type="audio/mpeg">
+  ⚠️ お使いのブラウザは音声要素をサポートしていません。 こちらをご覧ください「https://huggingface.co/spaces/MakiAi/pdf2audio-JP-st」⚠️
 </audio>
 
 
