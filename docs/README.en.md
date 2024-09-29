@@ -42,30 +42,36 @@ pinned: false
 </p>
 
 >[!IMPORTANT]
->Nearly 90% of the release notes, README, and commit messages in this repository are generated using [claude.ai](https://claude.ai/) and [ChatGPT4](https://chatgpt.com/) with the help of [AIRA](https://github.com/Sunwood-ai-labs/AIRA), [SourceSage](https://github.com/Sunwood-ai-labs/SourceSage), [Gaiah](https://github.com/Sunwood-ai-labs/Gaiah), [HarmonAI_II](https://github.com/Sunwood-ai-labs/HarmonAI_II), and [IRIS](https://github.com/Sunwood-ai-labs/IRIS).
+>Nearly 90% of the release notes, README, and commit messages in this repository are generated using [claude.ai](https://claude.ai/) and [ChatGPT4](https://chatgpt.com/) through [AIRA](https://github.com/Sunwood-ai-labs/AIRA), [SourceSage](https://github.com/Sunwood-ai-labs/SourceSage), [Gaiah](https://github.com/Sunwood-ai-labs/Gaiah), [HarmonAI_II](https://github.com/Sunwood-ai-labs/HarmonAI_II), and [IRIS](https://github.com/Sunwood-ai-labs/IRIS).
 
-This Streamlit app converts PDFs into audio podcasts, lectures, summaries, and more. It utilizes OpenAI's GPT model for text generation and speech synthesis.
-
-https://github.com/user-attachments/assets/a94a33bf-8a01-4661-be25-21b0a83c43b8
+This Streamlit app converts PDFs into audio content like podcasts, lectures, and summaries. It utilizes OpenAI's GPT models for text generation and speech synthesis.
 
 
-## ✨ Main Features
+## 🚀 Project Overview
 
-- Upload multiple PDF files
-- Choose from different instruction templates (podcast, lecture, summary, etc.)
-- Customize text generation and voice models
-- Select different voices for speakers
+This project provides a Streamlit application that allows users to upload PDF files and generate audio content (podcasts, lectures, summaries, etc.) using OpenAI's GPT models. Users can upload multiple PDF files and control the generated audio content by selecting from various instruction templates or by customizing instructions.
+
+
+## ✨ Key Features
+
+- Ability to upload multiple PDF files
+- Selection from different instruction templates (podcast, lecture, summary, etc.)
+- Customizable text generation and voice models
+- Different voice options for the speaker
+- Deployment using AWS ECR and EC2
+
 
 ## 🔧 How to Use
 
-1. Upload one or more PDF files
-2. Choose your desired instruction template
-3. Customize instructions as needed
-4. Click "Generate Audio" to create audio content
+1. Upload one or more PDF files.
+2. Select the desired instruction template.
+3. Customize the instructions if needed.
+4. Click "Generate Audio" to create the audio content.
 
 
 > [!WARNING]
-> You will need an OpenAI API key to use this app.
+> You need an OpenAI API key to use this app.
+
 
 ## 🎧 Example
 
@@ -75,7 +81,18 @@ https://github.com/user-attachments/assets/a94a33bf-8a01-4661-be25-21b0a83c43b8
 </audio>
 
 
-## 🚀 Deployment Steps
+## 📦 Installation Instructions
+
+This application is designed to be deployed using Docker.
+
+1. Clone the repository.
+2. Install the necessary Python packages using the `requirements.txt` file.
+3. Copy the `terraform.example.tfvars` file and rename it to `terraform.tfvars`. Enter your AWS credentials and settings.
+4. Deploy the AWS infrastructure using Terraform.
+5. Launch the application.
+
+
+## 🚀 Deployment Instructions
 
 Here are the steps to deploy this application using AWS ECR and EC2:
 
@@ -90,7 +107,7 @@ aws ecr describe-repositories --repository-names pdf2audio-jp-streamlit-app --re
 
 This will create a new ECR repository and display its details.
 
-### 2. Login to ECR
+### 2. Log in to ECR
 
 Next, log in to ECR:
 
@@ -102,7 +119,7 @@ Note: Replace `XXXXXX` with your AWS account ID.
 
 ### 3. Build and Push the Docker Image
 
-Build the Docker image of your application and push it to ECR:
+Build the Docker image of the application and push it to ECR:
 
 ```bash
 docker build -t pdf2audio-jp-streamlit-app .
@@ -114,31 +131,31 @@ These commands will build the Docker image locally and push it to the ECR reposi
 
 ### 4. Connect to the EC2 Instance
 
-To connect to the EC2 instance that will host your application:
+To connect to the EC2 instance that will host the application:
 
 ```bash
 ssh -i "C:\Users\makim\.ssh\streamlit-terraform-keypair-tokyo-PEM2.pem" ubuntu@i-02c64da0e38c52135
 ```
 
-Note: Change the path and instance ID accordingly to your environment.
+Note: Adjust the path and instance ID appropriately for your environment.
 
-These steps will allow you to deploy the application to the AWS cloud environment. Run the Docker container on the EC2 instance and start the application.
-
+These steps will allow you to deploy the application to the AWS cloud environment. Run the Docker container on the EC2 instance and launch the application.
 
 
 ## 🙏 Acknowledgments
 
-This project was inspired by and based on the code published in [https://github.com/knowsuchagency/pdf-to-podcast](https://github.com/knowsuchagency/pdf-to-podcast) and [https://github.com/knowsuchagency/promptic](https://github.com/knowsuchagency/promptic).
+This project refers to and is based on the code published in [https://github.com/knowsuchagency/pdf-to-podcast](https://github.com/knowsuchagency/pdf-to-podcast) and [https://github.com/knowsuchagency/promptic](https://github.com/knowsuchagency/promptic).
 
 GitHub repository: [lamm-mit/PDF2Audio](https://github.com/lamm-mit/PDF2Audio)
+
 
 ## 📄 License
 
 MIT License
 
+
 ## 🆕 What's New
 
-**Version: v0.1.0**
+**Version: v0.2.2**
 
-This version introduced the Streamlit application for converting PDFs to audio. It also added various workflows and scripts and enhanced GitHub integration. For more details, see the [v0.1.0 release notes](https://github.com/Sunwood-ai-labs/pdf2audio-JP-st/releases/tag/v0.1.0). 
-```
+This release mainly focuses on updating the README file and modifying the release note generation settings. It also includes changes to improve usability, such as removing unnecessary font files and adding a link to the demo page on Hugging Face Spaces.
