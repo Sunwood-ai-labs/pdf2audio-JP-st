@@ -33,6 +33,8 @@
 
 このStreamlitアプリは、PDFを音声ポッドキャスト、講義、要約などに変換します。テキスト生成と音声合成にはOpenAIのGPTモデルを使用しています。
 
+https://github.com/user-attachments/assets/a94a33bf-8a01-4661-be25-21b0a83c43b8
+
 
 ## ✨ 主な機能
 
