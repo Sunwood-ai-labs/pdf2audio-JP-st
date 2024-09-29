@@ -1,0 +1,5 @@
+[theme]
+font = "monospace"
+
+[ui]
+hideTopBar = true
