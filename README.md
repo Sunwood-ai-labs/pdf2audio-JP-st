@@ -46,7 +46,10 @@ pinned: false
 
 このStreamlitアプリは、PDFを音声ポッドキャスト、講義、要約などに変換します。テキスト生成と音声合成にはOpenAIのGPTモデルを使用しています。
 
-https://github.com/user-attachments/assets/a94a33bf-8a01-4661-be25-21b0a83c43b8
+
+## 🚀 プロジェクト概要
+
+このプロジェクトは、PDFファイルをアップロードし、OpenAIのGPTモデルを使用して音声コンテンツ（ポッドキャスト、講義、要約など）を生成するStreamlitアプリケーションを提供します。ユーザーは複数のPDFファイルをアップロードし、様々な指示テンプレートから選択、または指示をカスタマイズすることで、生成される音声コンテンツを制御できます。
 
 
 ## ✨ 主な機能
@@ -55,6 +58,8 @@ https://github.com/user-attachments/assets/a94a33bf-8a01-4661-be25-21b0a83c43b8
 - 異なる指示テンプレート（ポッドキャスト、講義、要約など）から選択可能
 - テキスト生成と音声モデルをカスタマイズ可能
 - 話者に異なる声を選択可能
+- AWS ECRとEC2を使用したデプロイメント
+
 
 ## 🔧 使用方法
 
@@ -67,12 +72,24 @@ https://github.com/user-attachments/assets/a94a33bf-8a01-4661-be25-21b0a83c43b8
 > [!WARNING]
 > このアプリを使用するにはOpenAI APIキーが必要です。
 
+
 ## 🎧 Example
 
 <audio controls>
   <source src="https://github.com/Sunwood-ai-labs/pdf2audio-JP-st/raw/595e0375167c78d5014cfae3174cdba33cd544b6/docs/Paper-commentary-podcast_audio.mp3" type="audio/mpeg">
   ⚠️ お使いのブラウザは音声要素をサポートしていません。 こちらをご覧ください「https://huggingface.co/spaces/MakiAi/pdf2audio-JP-st」⚠️
 </audio>
+
+
+## 📦 インストール手順
+
+このアプリケーションは、Dockerを使用してデプロイするように設計されています。
+
+1. リポジトリをクローンします。
+2. `requirements.txt` ファイルを使用して必要なPythonパッケージをインストールします。
+3. `terraform.example.tfvars` ファイルをコピーして `terraform.tfvars` に名前を変更し、AWSの資格情報と設定を入力します。
+4. Terraformを使用してAWSインフラストラクチャをデプロイします。
+5. アプリケーションを起動します。
 
 
 ## 🚀 デプロイメント手順
@@ -125,19 +142,20 @@ ssh -i "C:\Users\makim\.ssh\streamlit-terraform-keypair-tokyo-PEM2.pem" ubuntu@i
 これらの手順により、アプリケーションをAWSクラウド環境にデプロイすることができます。EC2インスタンス上でDockerコンテナを実行し、アプリケーションを起動してください。
 
 
-
 ## 🙏 謝辞
 
 このプロジェクトは、[https://github.com/knowsuchagency/pdf-to-podcast](https://github.com/knowsuchagency/pdf-to-podcast)と[https://github.com/knowsuchagency/promptic](https://github.com/knowsuchagency/promptic)で公開されているコードを参考にし、それに基づいています。
 
 GitHubリポジトリ: [lamm-mit/PDF2Audio](https://github.com/lamm-mit/PDF2Audio)
 
+
 ## 📄 ライセンス
 
 MIT License
 
+
 ## 🆕 最新情報
 
-**バージョン: v0.1.0**
+**バージョン: v0.2.2**
 
-このバージョンでは、PDFを音声に変換するStreamlitアプリケーションが導入されました。また、様々なワークフローとスクリプトが追加され、GitHubとの連携が強化されました。詳細については、[v0.1.0リリースノート](https://github.com/Sunwood-ai-labs/pdf2audio-JP-st/releases/tag/v0.1.0) を参照してください。
+このリリースでは、主にREADMEファイルの更新と、リリースノート生成設定の変更が行われました。また、不要なフォントファイルの削除や、Hugging Face Spacesへのデモページへのリンク追加など、ユーザビリティの向上のための変更も含まれています。
